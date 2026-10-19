@@ -146,6 +146,7 @@ table.spec{width:100%;border-collapse:collapse;font-size:1rem}
 .radios input{width:auto}
 .form button{justify-self:start;font-family:var(--cond);font-size:1.15rem;font-weight:600;background:var(--blue);color:#fff;border:0;padding:12px 24px;cursor:pointer}
 .form button:disabled{opacity:.6;cursor:default}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .status{font-size:.95rem;color:var(--ink-2);min-height:1.2em}
 .status.ok{color:var(--green)}.status.err{color:#e0734a}
 
@@ -365,6 +366,7 @@ footer a{color:var(--dark-ink)}
             <label for="f-undecided"><input type="radio" id="f-undecided" name="option" value="Undecided"> Not sure yet</label>
           </div>
         </fieldset>
+        <label for="f-website" class="hp" aria-hidden="true">Website<input id="f-website" name="website" tabindex="-1" autocomplete="off"></label>
         <label for="f-msg">Project details<textarea id="f-msg" name="message" rows="4" placeholder="Influent oil and solids, discharge limits, location, timing"></textarea></label>
         <button type="submit" id="f-submit">Send inquiry</button>
         <p id="f-status" class="status" role="status" aria-live="polite"></p>

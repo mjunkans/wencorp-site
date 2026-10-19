@@ -3,6 +3,7 @@
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
   const b = req.body || {};
+  if (b.website) return res.status(200).json({ ok: true }); // honeypot: bots fill the hidden field
   const clean = (v) => String(v || "").trim().slice(0, 4000);
   const name = clean(b.name), company = clean(b.company), email = clean(b.email);
   if (!name || !company || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return res.status(400).json({ error: "Missing required fields" });
